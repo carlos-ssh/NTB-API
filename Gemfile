@@ -40,6 +40,7 @@ gem "bootsnap", require: false
   
 # ========= Featured Gems ======================
   gem 'active_model_serializers', '~> 0.10.13'
+  gem 'kaminari'
 # ==============================================
 
 group :development, :test do
