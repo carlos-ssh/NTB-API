@@ -1,7 +1,11 @@
 Rails.application.routes.draw do
-  # Define your application routes per the DSL in https://guides.rubyonrails.org/routing.html
+  get '/latest-posts', to: 'posts#latest_posts'
+  
+  # post '/create-message', to: 'contactmessages#create'
 
-  # Defines the root path route ("/")
-  # root "articles#index"
-  resources :articles, only: [:index, :show]
+  resources :posts, only: [:index, :show, :latest_posts]
+  resources :contactmessages, only: [:create]
+
+  root "posts#index"
+  # resources :articles, only: [:index, :show]
 end

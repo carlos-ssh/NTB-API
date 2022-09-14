@@ -5,6 +5,18 @@
 #
 #   movies = Movie.create([{ name: "Star Wars" }, { name: "Lord of the Rings" }])
 #   Character.create(name: "Luke", movie: movies.first)
+require 'faker'
+
+puts "🌱 Seeding data..."
+
+30.times do |i|
+  Post.create(
+    title: Faker::Lorem.sentence,
+    description: Faker::Lorem.paragraph,
+    image: "Faker::Image.image",
+    author_id: 1   
+  )
+end
 
 
 Article.create([
@@ -24,3 +36,6 @@ Article.create([
     slug: "first-article-3"
   }
 ])
+
+sleep(2)
+puts "🪴 Seeding completed!"
